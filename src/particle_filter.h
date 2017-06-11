@@ -23,14 +23,10 @@ struct Particle {
 	std::vector<double> sense_y;
 };
 
-
-
 class ParticleFilter {
 	
 	// Number of particles to draw
 	int num_particles; 
-	
-	
 	
 	// Flag, if filter is initialized
 	bool is_initialized;
@@ -90,7 +86,7 @@ public:
 	 * @param map Map class containing map landmarks
 	 */
 	void updateWeights(double sensor_range, double std_landmark[], std::vector<LandmarkObs> observations,
-			Map map_landmarks);
+					   Map map_landmarks);
 	
 	/**
 	 * resample Resamples from the updated set of particles to form
@@ -115,7 +111,5 @@ public:
 		return is_initialized;
 	}
 };
-
-
 
 #endif /* PARTICLE_FILTER_H_ */
